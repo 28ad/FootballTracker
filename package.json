@@ -1,0 +1,25 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "typescript": "^5.4.2"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.540.0",
+    "@aws-sdk/lib-dynamodb": "^3.552.0",
+    "aws-sdk": "^2.1586.0",
+    "axios": "^1.6.8",
+    "csv-parser": "^3.0.0",
+    "newsapi": "^2.4.1",
+    "websocket": "^1.0.34",
+    "ws": "^8.16.0"
+  }
+}
