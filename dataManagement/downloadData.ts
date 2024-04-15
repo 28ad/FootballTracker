@@ -60,7 +60,7 @@ function convertDate(date: string): string {
 // Run the readFootballCSV function when the page loads
 readFootballCSV()
     .then((data: Football[]) => {
-        // Do something with the data if needed
+        
     })
     .catch((error: any) => {
         console.error("Error:", error);

@@ -1,11 +1,16 @@
 // Initialize WebSocket connection
 const ws = new WebSocket('wss://r31lgwh3fk.execute-api.us-east-1.amazonaws.com/production/');
 
+// Get the value inside the <h1> tag with id "selectedTeam"
+const selectedTeam = document.getElementById('selectedTeam').textContent;
+
+console.log(selectedTeam);
+
 // Function to send data to the server
 function fetchGraphData() {
     let msgObject = {
         action: "getMatchData",
-        data: "test"
+        data: selectedTeam,
     };
 
     // Check if the WebSocket connection is open
@@ -27,6 +32,14 @@ function updateMatchData(data) {
 
     console.log(matches);
 
+    // Sort matches array by MatchDate in descending order
+    matches.sort((a, b) => a.MatchDate - b.MatchDate);
+
+    // Convert Unix timestamp to normal date format for plotting the graph
+    matches.forEach(match => {
+        match.MatchDate = new Date(match.MatchDate * 1000).toLocaleDateString(); // Convert Unix timestamp to milliseconds
+    });
+
     // Check if matches array is not empty
     if (matches.length > 0) {
         // Update the Plotly graph with the received data
@@ -45,7 +58,7 @@ function updateMatchData(data) {
         };
 
         const layout = {
-            title: 'Goals Scored by Arsenal Matches',
+            title: 'Goals Scored by' + " " + selectedTeam + " " + 'Matches',
             xaxis: { title: 'Match Date' },
             yaxis: { title: 'Goals' }
         };
@@ -56,6 +69,8 @@ function updateMatchData(data) {
         console.log("No match data available.");
     }
 }
+
+
 
 // Event listener for when the DOM content is loaded
 document.addEventListener("DOMContentLoaded", () => {

@@ -7,9 +7,9 @@ const dynamodb = new AWS.DynamoDB();
 
   // Query DynamoDB when the DOM content is loaded
   const params = {
-    TableName: 'matches', // Replace 'matches' with your actual table name
+    TableName: 'matches', 
     ExpressionAttributeValues: {
-        ":team": { S: "Arsenal" } // Specify the team name
+        ":team": { S: "Arsenal" } 
     },
     FilterExpression: "HomeTeam = :team OR AwayTeam = :team" // Filter by HomeTeam or AwayTeam
 };
@@ -26,16 +26,6 @@ dynamodb.scan(params, (err, data) => {
             AwayTeam: item.AwayTeam.S,
             AwayGoals: parseInt(item.AwayGoals.N)
         }));
-
-       // Log properties of each object in matches
-    //    matches.forEach(match => {
-    //     console.log('Match Date:', match.MatchDate);
-    //     console.log('Home Team:', match.HomeTeam);
-    //     console.log('Home Goals:', match.HomeGoals);
-    //     console.log('Away Team:', match.AwayTeam);
-    //     console.log('Away Goals:', match.AwayGoals);
-    //     console.log('---------------------------------------');
-    // });
 
     console.log(matches.length);
 
