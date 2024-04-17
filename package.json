@@ -9,16 +9,18 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^20.11.30",
+    "@types/node": "^20.12.7",
     "typescript": "^5.4.2"
   },
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.540.0",
+    "@aws-sdk/client-sagemaker-runtime": "^3.554.0",
     "@aws-sdk/lib-dynamodb": "^3.552.0",
     "aws-sdk": "^2.1586.0",
     "axios": "^1.6.8",
     "csv-parser": "^3.0.0",
     "newsapi": "^2.4.1",
+    "plotly": "^1.0.6",
     "websocket": "^1.0.34",
     "ws": "^8.16.0"
   }

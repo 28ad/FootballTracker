@@ -4,6 +4,14 @@ body {
     box-sizing: border-box;
     margin: 0px;
     font-family: "Lato", sans-serif;
+
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -30,18 +38,40 @@ body {
 .nav-bar-container ul li{
     text-decoration: none;
     list-style: none;
-    padding: 15px;
+    /* padding: 15px; */
     margin: 5px;
     cursor: pointer;
     font-weight: bold;
 }
 
 .team-link {
+    padding: 15px;
     text-decoration: none;
     list-style: none;
     color: black;
 }
 
-.nav-bar-container ul li:hover {
+.team-link:hover {
     background-color: rgb(232, 232, 232);
+}
+
+.info-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    
+}
+
+.info-box {
+    margin-left: 20px;
+}
+
+.info-box-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.info-box span {
+    font-weight: 200;
 }
